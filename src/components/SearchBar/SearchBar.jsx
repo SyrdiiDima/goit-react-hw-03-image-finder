@@ -2,7 +2,6 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImSearch } from 'react-icons/im';
 import css from './SearchBar.module.css';
-import { toast } from 'react-toastify';
 
 class SearchBar extends Component {
   state = {
@@ -16,7 +15,7 @@ class SearchBar extends Component {
     e.preventDefault();
     
     if (this.state.search.trim() === '') {
-      toast.error('Еnter a value');
+      alert('Еnter a value');
       return;
     }
     this.props.onSubmit(this.state.search);

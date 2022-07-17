@@ -4,9 +4,8 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
-// import Notification from './Notification/Notification';
+import Notification from './Notification/Notification';
 import fetchImages from './services/searchAPI';
-import { ToastContainer } from 'react-toastify';
 
 export class App extends Component {
   state = {
@@ -75,12 +74,12 @@ export class App extends Component {
   };
 
   render() {
-    const { loading, showModal, images, largeImgUrl } = this.state;
+    const { loading,error, showModal, images, largeImgUrl } = this.state;
     return (
       <div className="App">
         <SearchBar onSubmit={this.onSearchSubmit} />
-
-        <ToastContainer></ToastContainer>
+    {error && <Notification />}
+        
 
         {images.length > 0 && (
           <>
