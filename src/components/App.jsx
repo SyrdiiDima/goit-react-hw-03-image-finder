@@ -6,7 +6,6 @@ import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
 import Notification from './Notification/Notification';
 import fetchImages from './services/searchAPI';
-import { ToastContainer } from 'react-toastify';
 
 export class App extends Component {
   state = {
@@ -80,7 +79,7 @@ export class App extends Component {
       <div className="App">
         <SearchBar onSubmit={this.onSearchSubmit} />
 
-        <ToastContainer></ToastContainer>
+        {error && <Notification />}
 
         {images.length > 0 && (
           <>

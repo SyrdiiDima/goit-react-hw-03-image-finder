@@ -1,8 +1,8 @@
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Notification = () => {
-  toast.error('Write the correct value');
+  alert('Write the correct value');
 
   return (
     <div>
